@@ -92,6 +92,19 @@ The model predicts **19 semantic classes**:
 
 ---
 
+## Dataset and Results Availability
+
+Due to unforeseen circumstances, the original dataset and the generated segmented images used during the development of this project are no longer available.
+
+As a result:
+
+* The original training, validation, and test images are not included in this repository.
+* The generated segmentation masks/results are not available.
+* The trained model and source code are provided where available.
+* The notebook documents the preprocessing, model architecture, training procedure, and inference pipeline used in the project.
+
+---
+
 ## 📂 Dataset Preparation
 
 The original annotations contain separate masks for different facial regions.
@@ -333,6 +346,27 @@ prediction = image.data.max(1)[1]
 ```
 
 The resulting segmentation masks are saved for further visualization and evaluation.
+
+---
+
+## Results
+
+The model was successfully trained and used for face segmentation during the original development of the project.
+
+The project produced pixel-level segmentation masks for multiple facial regions, including skin, eyes, eyebrows, ears, nose, mouth, hair, neck, clothing, and other regions defined by the segmentation labels.
+
+The original dataset and generated segmentation results are unfortunately no longer available due to unforeseen circumstances. Therefore, the repository does not currently include the original qualitative result images or enough data to reproduce the exact experiments.
+
+The notebook nevertheless contains the implementation of the complete pipeline, including:
+
+* Dataset preparation
+* Multi-class mask generation
+* Image preprocessing
+* Model construction
+* Model training
+* Model saving and loading
+* Segmentation inference
+* Prediction visualization
 
 ---
 
