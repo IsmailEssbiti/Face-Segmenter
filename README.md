@@ -362,6 +362,89 @@ Alternatively, install all dependencies using:
 pip install -r requirements.txt
 ```
 
+## CUDA Installation
+
+If you have an NVIDIA GPU and want to use CUDA acceleration, install the CUDA-enabled version of PyTorch separately from the other dependencies.
+
+### 1. Create a virtual environment
+
+```bash
+python -m venv venv
+```
+
+Activate it on Windows:
+
+```bash
+venv\Scripts\activate
+```
+
+On Linux/macOS:
+
+```bash
+source venv/bin/activate
+```
+
+### 2. Install PyTorch with CUDA support
+
+For example, using the CUDA 12.6 build:
+
+```bash
+pip install torch torchvision --index-url https://download.pytorch.org/whl/cu126
+```
+
+PyTorch also provides CUDA 12.8 and CUDA 13.0 builds for supported versions and GPUs. Check the official PyTorch installation page and select the CUDA version appropriate for your system.
+
+### 3. Install the remaining dependencies
+
+After installing PyTorch, install the other project dependencies:
+
+```bash
+pip install opencv-python numpy pandas Pillow jupyter
+```
+
+Alternatively, if `requirements.txt` contains the non-PyTorch dependencies:
+
+```bash
+pip install -r requirements.txt
+```
+
+### 4. Verify CUDA
+
+Run the following Python code:
+
+```python
+import torch
+
+print("PyTorch version:", torch.__version__)
+print("CUDA available:", torch.cuda.is_available())
+
+if torch.cuda.is_available():
+    print("GPU:", torch.cuda.get_device_name(0))
+```
+
+You should see:
+
+```text
+CUDA available: True
+GPU: NVIDIA ...
+```
+
+### CPU-only installation
+
+If you do not have an NVIDIA GPU, install the CPU version instead:
+
+```bash
+pip install torch torchvision --index-url https://download.pytorch.org/whl/cpu
+```
+
+**The project automatically selects CUDA when it is available:**
+
+```python
+device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+```
+
+**Therefore, the same notebook can run on either an NVIDIA GPU or the CPU, although GPU acceleration is strongly recommended for training.**
+
 ---
 
 ## ▶️ Usage
