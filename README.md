@@ -336,74 +336,13 @@ The resulting segmentation masks are saved for further visualization and evaluat
 
 ---
 
-## 📊 Results
-
-The project successfully implements the complete face-segmentation pipeline from dataset preparation to model inference.
-
-### Model Configuration
-
-| Parameter         | Result                            |
-| ----------------- | --------------------------------- |
-| Task              | Multi-class semantic segmentation |
-| Classes           | 19                                |
-| Input resolution  | 512 × 512                         |
-| Output resolution | 512 × 512                         |
-| Architecture      | Custom Encoder-Decoder CNN        |
-| Optimizer         | Adam                              |
-| Loss              | Cross-Entropy Loss                |
-| Epochs            | 50                                |
-| Batch size        | 10                                |
-| GPU               | NVIDIA Tesla T4                   |
-| Framework         | PyTorch                           |
-
-### Quantitative Results
-
-The current notebook does not explicitly calculate standard segmentation metrics such as IoU or Dice score.
-
-If these metrics are calculated later, they can be added here:
-
-| Metric         |     Result |
-| -------------- | ---------: |
-| Pixel Accuracy | **XX.XX%** |
-| Mean IoU       | **XX.XX%** |
-| Dice Score     | **XX.XX%** |
-| Precision      | **XX.XX%** |
-| Recall         | **XX.XX%** |
-
----
-
-## 🖼️ Qualitative Results
-
-Example predictions can be presented using three images:
-
-| Original Image | Ground Truth | Model Prediction |
-| -------------- | ------------ | ---------------- |
-| Original       | Ground Truth | Prediction       |
-
-Recommended repository structure:
-
-```text
-results/
-├── original/
-├── ground_truth/
-└── predictions/
-```
-
-Example:
-
-```markdown
-![Segmentation Result](results/example.png)
-```
-
----
-
 ## 🚀 Installation
 
 Clone the repository:
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/YOUR_REPOSITORY.git
-cd YOUR_REPOSITORY
+git clone https://github.com/IsmailEssbiti/Face-Segmenter.git
+cd Face-Segmenter
 ```
 
 Install the required dependencies:
